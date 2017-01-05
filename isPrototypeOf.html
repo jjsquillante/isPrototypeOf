@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script src="tinytest.js"></script> 
+	<script src="isPrototypeOf.js"></script> 
+	<script>
+
+
+	tests({
+	   'james object should be linked to Object.prototype': function() {
+	       var testOne = isPrototypeOf(Object.prototype, james);
+	       eq(testOne, true);
+	   },
+	   'james2 object should be linked to james object prototype': function() {
+	       var testTwo = isPrototypeOf(james, james2);
+	       eq(testTwo, true);
+	   },
+	   'randomObject should not be linked to james prototype': function() {
+	       var testThree = isPrototypeOf(Object.getPrototypeOf(james2), randomObject);
+	       eq(testThree === false, true);
+	   }
+	});
+
+	</script>
+</body>
+</html>
