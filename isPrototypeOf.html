@@ -16,12 +16,16 @@
 	   },
 	   'james2 object should be linked to james object prototype': function() {
 	       var testTwo = isPrototypeOf(james, james2);
-	       eq(testTwo, true);
+	       eq(testTwo === james.isPrototypeOf(james2), true);
 	   },
 	   'randomObject should not be linked to james prototype': function() {
-	       var testThree = isPrototypeOf(Object.getPrototypeOf(james2), randomObject);
+	       var testThree = isPrototypeOf(james, randomObject);
 	       eq(testThree === false, true);
-	   }
+	   },
+	   'empty object with NO prototype should NOT be linked to Object.prototype.': function() {
+	       var testFour = isPrototypeOf(Object.prototype, empty);
+		eq(testFour === false, true);
+	   } 
 	});
 
 	</script>
