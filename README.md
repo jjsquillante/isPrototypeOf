@@ -1,2 +1,2 @@
 # isPrototypeOf
-practice to better understand the prototype chain
+Beasts Challenge #4: practice to better understand the prototype chain
