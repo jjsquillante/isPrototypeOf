@@ -12,6 +12,9 @@ james3.favColor = 'orange';
 var randomObject = {};
 
 function isPrototypeOf(proto, obj) {
+	if (proto === undefined || proto === null) {
+		throw new TypeError('first argument cannot be undefined or null');
+	}
 	var currentObj = obj;
 	while (currentObj !== null) {
 		if (proto === currentObj) {
