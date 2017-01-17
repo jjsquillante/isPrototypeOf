@@ -15,7 +15,7 @@ function isPrototypeOf(proto, obj) {
 	if (proto === undefined || proto === null) {
 		throw new TypeError('first argument cannot be undefined or null');
 	}
-	var currentObj = obj;
+	var currentObj = Object.getPrototypeOf(obj);
 	while (currentObj !== null) {
 		if (proto === currentObj) {
 			return true;
